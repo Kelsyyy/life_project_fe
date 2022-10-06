@@ -1,0 +1,59 @@
+@import '../../variable';
+
+@mixin filterTitle {
+    font-size: 20px;
+    border-bottom: 3px solid $subClrBrown;
+    padding-bottom: 7px;
+    width: 80%;
+}
+@mixin buttonHover {
+    box-shadow: .2px .2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.activitySlider{
+    margin-bottom: 40px;
+    .sliderText{
+        @include filterTitle;
+    }
+    .slider {
+        width: 80%-5;
+        margin: 20px 10px 10px;
+      }
+    .sliderSearch{
+        width: 80%-8;
+        margin-left: 15px;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        button{
+            font-size: 14px;
+            font-weight: 350;
+            background-color: $subClrBrown;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            padding: 3px 14px;
+            margin: 10px 0;
+            transition: .5s;
+            &:hover{
+                @include buttonHover;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:375px) {
+    .activitySlider{
+        .sliderText{
+            text-align: center;
+            width: 170px;        
+        }
+        .slider {
+            width: 100%-10;
+          }
+        .sliderSearch{
+            width: 70%-6;
+            margin-left: 30%;
+        }
+    }
+}

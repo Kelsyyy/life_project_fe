@@ -1,0 +1,59 @@
+@import './variable';
+
+.recipeDetail {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: auto;
+  color: $contentClr;
+
+  .recipeDetailIntro {
+    max-width: $maxWidth;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    min-height: 100vh;
+  }
+  .recipeDetailStep {
+    display: flex;
+    flex-wrap: nowrap;
+    // overflow: hidden;
+    height: 100vh;
+    scroll-behavior: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .recipeStepNum {
+      z-index: 60;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
+  }
+  .recipeDetailComment {
+    max-width: 1200px;
+    width: 100%;
+    // height: 100%;
+    padding: 0 2rem;
+  }
+
+  // modulecss for recipe
+  .vh100 {
+    min-width: 100vw;
+    width: 100%;
+    height: 100%;
+  }
+
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    color: $contentClr;
+    text-decoration: none;
+  }
+}

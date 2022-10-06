@@ -1,0 +1,63 @@
+@import '../../variable';
+
+.activityDate{
+    margin-bottom: 40px;
+    .dateText{
+        font-size: 20px;
+        border-bottom: 3px solid $subClrBrown;
+        padding-bottom: 7px;
+        width: 80%;
+    }
+    input::-webkit-calendar-picker-indicator {
+        width: 25px;
+        height: 25px;
+        color: $subClrBrown;
+        // background-color: $subClrBrown; 
+        // background-image: -webkit-linear-gradient(top, $subClrBrown, $subClrBrown);
+        border-radius: 2px; 
+        cursor: pointer;
+    }
+    .dateRemind{
+        margin: 8px 10px 0;
+        height: 18.8px;
+        font-size: $text12;
+        color: $focusClrG;
+    }
+    button{        
+        border: 1px solid $subClrGY;
+        color: $subClrBrown;
+        border-radius: 30px;
+        background-color: $mainClrW;
+        padding: 3px 14px;
+        margin-left: 60%;
+        transition: .3s;
+        font-size: $text14;
+        &:hover{
+            box-shadow: .2px .2px 6px rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+
+@media screen and (max-width:375px) {
+    .activityDate{
+        margin-bottom: -10px;
+        .dateText{
+            text-align: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .dateRemind{
+            margin: 0px 10px 15px;
+            height: 18.8px;
+            font-size: $text12;
+            color: $focusClrG;
+        }
+        button{
+            border-radius: 30px;
+            margin-left: 25px;
+            &:hover{
+                box-shadow: .2px .2px 6px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}

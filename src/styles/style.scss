@@ -1,0 +1,90 @@
+@import './variable';
+body {
+  height: auto !important;
+}
+//Html Element Style
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Noto Sans TC', sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+.life {
+  font-family: 'Bungee', cursive !important;
+}
+a,
+a:visited,
+a:hover,
+a:active {
+  color: $contentClr;
+  text-decoration: none;
+}
+
+//清除ul樣式
+ul {
+  list-style-type: none;
+}
+
+// public icon
+
+.backToTopBtn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  z-index: 5;
+}
+
+//module
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.objectContain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.objectCover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cursorPointer {
+  cursor: pointer;
+}
+.transition {
+  transition: 0.2s;
+}
+.userSelectNone {
+  user-select: none;
+}
+
+// antd style
+
+textarea,
+input {
+  &.ant-input {
+    &:focus {
+      border-color: $subClrGY;
+      box-shadow: none;
+    }
+    &:hover {
+      border-color: $subClrGY;
+    }
+  }
+}
+.ant-message-custom-content {
+  display: flex;
+  align-items: center;
+}

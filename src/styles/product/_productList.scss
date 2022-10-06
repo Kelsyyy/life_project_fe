@@ -1,0 +1,147 @@
+@import '../variable';
+
+$one: #d7be92;
+$two: #d0cdc7;
+$three: #c47222;
+$other: #aaaaaa;
+$numberSize: 36px;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.p {
+  padding: 0;
+  margin: 0;
+  color: $contentClr;
+}
+.product {
+  margin: $headerHeight auto 200px;
+  max-width: $maxWidth;
+  color: $contentClr;
+  .reset {
+    padding: 0;
+    margin: 0;
+    .title {
+      border-bottom: 2px solid $subClrGY;
+      padding-top: 5px;
+      @media (max-width: $rwdWidth) {
+        background: #eeeeee;
+      }
+      h4,
+      p {
+        margin: 0;
+        padding-bottom: 5px;
+      }
+    }
+    .rankTitle {
+      margin-top: 5px;
+    }
+    .rankContainer {
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      &:hover .rank{
+        filter:blur(.2px);
+        opacity:.5;
+        box-shadow:none;
+      }
+      &:hover .rank:hover{
+        transform:scale(1);
+        filter:blur(0px);
+        opacity:1;
+        transform: scale(1.05);
+        // border: 1px solid #eee;
+        box-shadow:0 0 5px rgba(0,0,0,.3);
+      }
+      @media (max-width: $rwdWidth) {
+        min-height: 220px;
+        display: flex;
+        align-items: flex-start;
+
+      }
+
+      .rank {
+        position: relative;
+        height: 290px;
+        width: 250px;
+        // margin-right: 38px;
+        margin: 0 19px;
+        padding: 10px;
+        @media (max-width: $rwdWidth) {
+          height: 120px;
+          width: 120px;
+          margin-left: 0px;
+          margin-right: 5px;
+        }
+        .number {
+          width: $numberSize;
+          height: $numberSize;
+          background: $other;
+          text-align: center;
+          line-height: 2.25rem;
+          @media (max-width: $rwdWidth) {
+            height: 20px;
+            width: 20px;
+            line-height: 1rem;
+          }
+          p {
+            margin: 0;
+            font-size: $text24;
+            color: $mainClrW;
+            @media (max-width: $rwdWidth) {
+              font-size: 1rem;
+            }
+          }
+        }
+        .one {
+          background: $one;
+        }
+        .two {
+          background: $two;
+        }
+        .three {
+          background: $three;
+        }
+        figure {
+          min-width: 214px;
+          height: 220px;
+          position: absolute;
+          top: $numberSize/2;
+          left: $numberSize;
+          z-index: -1;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          @media (max-width: $rwdWidth) {
+            min-width: 100px;
+            height: 100px;
+            left: 10px;
+          }
+          img {
+            width: 100%;
+            object-fit: cover;
+            margin: 0 auto;
+          }
+        }
+        p {
+          margin: 200px 0 0;
+          @media (max-width: $rwdWidth) {
+            margin: 120px 0 0;
+          }
+        }
+      }
+    }
+  }
+  .noData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+  }
+}

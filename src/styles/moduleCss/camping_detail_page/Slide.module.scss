@@ -1,0 +1,35 @@
+@import '../../variable';
+@mixin slide($translateX) {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translate($translateX, -50%);
+  cursor: pointer;
+  }
+  
+.productSlide {
+  margin: 50px auto;
+  // max-width: 1260px;
+  position: relative;
+  .sliderLeft {
+    left: 0;
+    @include slide(-60px);
+  }
+  .sliderRight {
+    right: 0;
+    @include slide(60px);
+  }
+}
+
+@media screen and (max-width:375px) {
+  .productSlide {
+    margin: 35px auto;
+    .sliderLeft {
+      transform: translate(-35px, -50%);
+      cursor: pointer;
+    }
+    .sliderRight {
+      transform: translate(35px, -50%);
+    }
+  }
+}

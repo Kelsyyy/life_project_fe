@@ -1,0 +1,139 @@
+@import './variable';
+
+.homepageContainer {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  background: #fff;
+  padding-bottom: 8rem;
+  margin-top: calc($headerHeight + 1rem);
+}
+
+.homepage {
+  .indexSlider {
+    margin: 1rem 0 5rem;
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide-prev,
+        .swiper-slide-next {
+          opacity: 0.5;
+        }
+      }
+      // swiper-
+      .swiper-button-prev,
+      .swiper-button-next {
+        height: 100%;
+        top: 0;
+        margin-top: 0;
+        padding-left: 0.5rem;
+        transition: 0.3s;
+        &::after {
+          background: $subClrBrown;
+          padding: 2.8rem 1rem;
+          font-size: 1rem;
+          color: #fff;
+        }
+      }
+      .swiper-button-prev {
+        left: 0;
+        transform: translateX(-150%);
+      }
+      .swiper-button-next {
+        right: 0;
+        margin-right: 0.5rem;
+        transform: translateX(150%);
+      }
+      &:hover {
+        .swiper-button-prev,
+        .swiper-button-next {
+          transform: translateX(0);
+        }
+      }
+      .swiper-pagination {
+        .swiper-pagination-bullet-active {
+          background: $subClrBrown;
+        }
+      }
+      @media (max-width: 500px) {
+        .swiper-button-prev,
+        .swiper-button-next {
+          display: none;
+        }
+      }
+    }
+    @media (max-width: 500px) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .hPnewsContainer,
+  .hPproductContainer,
+  .hPrecipeContainer,
+  .hPactivityContainer {
+    max-width: 1200px;
+    padding: 0 2rem;
+    margin: 0 auto;
+  }
+  .hPrecipeActivity {
+    margin-top: 8rem;
+    @media (max-width: 1200px) {
+      margin-top: 6rem;
+    }
+    @media (max-width: 1000px) {
+      margin-top: 4rem;
+    }
+    @media (max-width: 765px) {
+      margin-top: 2rem;
+    }
+  }
+  .recipeCard {
+    margin: 1rem 0;
+    .swiper {
+      .swiper-slide {
+        opacity: 0.5;
+        transition: 0.3s;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .swiper-slide-active {
+        opacity: 1;
+      }
+      &:hover {
+        .swiper-button-prev,
+        .swiper-button-next {
+          opacity: 1;
+        }
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+        transition: 0.3s;
+        opacity: 0;
+        &::after {
+          color: $contentClr;
+        }
+      }
+    }
+  }
+
+  .separateLine {
+    width: 100%;
+    height: 1px;
+    background: $hoverClr;
+    margin: 5rem 0;
+    @media (max-width: 768px) {
+      margin: 3rem 0;
+    }
+    @media (max-width: 500px) {
+      margin: 1.5rem 0;
+    }
+  }
+
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    color: $contentClr;
+    text-decoration: none;
+  }
+}

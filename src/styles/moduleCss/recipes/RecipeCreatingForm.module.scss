@@ -1,0 +1,105 @@
+@import '../../variable';
+
+// container
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    background: #fff;
+  }
+}
+
+// first line
+.createController {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  .btn {
+    box-shadow: 1px 1px 5px rgb(0 0 0 / 10%);
+    border: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    color: #fff;
+    &.add {
+      background: $focusClrG;
+    }
+    &.demo {
+      background: $focusClrY;
+    }
+  }
+  @media (max-width: 900px) {
+    flex-direction: row;
+    margin-left: 2rem !important;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Form
+.addingForm {
+  flex: 1 1 auto;
+  max-width: 750px;
+  max-height: 90vh;
+  background: #fff;
+  margin: 0 auto;
+  padding: 2rem;
+  color: $contentClr;
+  border-radius: 3px;
+  position: relative;
+  overflow-y: auto;
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $subClrBrown;
+  }
+  .formItem {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    .addMaterialBtn {
+      border: 2px solid $subClrBrown;
+      color: $subClrBrown;
+      padding: 0.5rem 0;
+      background: #fff;
+      border-radius: 3px;
+      transition: 0.15s;
+      &:hover {
+        background: $subClrBrown;
+        color: #fff;
+      }
+    }
+  }
+
+  // html tag css
+  label {
+    width: 100%;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid $subClrGY;
+    border-radius: 3px;
+    &:focus {
+      // outline: none;
+      outline: 1.5px solid $subClrBrown;
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+  textarea {
+    resize: none;
+  }
+}

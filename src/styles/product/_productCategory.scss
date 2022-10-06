@@ -1,0 +1,51 @@
+@import '../variable';
+@mixin d-flex() {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+$height: 50px;
+.categoryContainer {
+  width: 290px;
+  // position: relative;
+  margin-right: 40px;
+  position: sticky;
+  top: 65px;
+  align-self: flex-start;
+  .title {
+    min-width: 290;
+    height: $height;
+    @include d-flex();
+    border-bottom: 1px solid $contentClr;
+    color: $subClrBrown;
+    font-weight: 600;
+    p {
+      margin: 0;
+    }
+  }
+  .category {
+    @include d-flex();
+    min-width: 240;
+    height: $height;
+    padding-left: 10px;
+    &:hover {
+      // background: $hoverClr;
+      transition: 0.4s;
+      color: $mainClrW;
+    }
+  }
+  .active {
+    position: absolute;
+    top: 8px;
+    min-width: 100%;
+    height: $height;
+    background: $subClrBrown;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: -1;
+    border-radius: 5px;
+  }
+  @media (max-width:$rwdWidth) {
+    display: none;
+  }
+}

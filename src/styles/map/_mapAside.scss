@@ -1,0 +1,17 @@
+@import '../variable';
+
+.mapContain{
+    color: $contentClr;
+    .mapContain{
+        .leaflet-container{
+            height: 180px ;
+            width: 280px;
+            .map{
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+    
+    
+}

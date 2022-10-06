@@ -1,0 +1,139 @@
+@import '../variable';
+
+// Table區
+
+.orderList{
+  text-align: center;
+  padding: 0 0.5rem;
+  margin-bottom: 2rem;
+  box-shadow:0px 0px 5px $subClrGY; 
+  @media (max-width:576px){
+    font-size: $text14;
+    padding:0;
+  }
+
+  .hide{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .dblock{
+    @media (max-width: 576px) {
+      display: block !important;
+    }
+  }
+  .row{    
+    --bs-gutter-x:0;
+    
+
+    img{
+      max-width: 100%;
+    }
+  }
+
+  .orderListTitle{
+    align-items: center;
+    line-height: 2rem;
+    padding: .5rem 0;
+    border-bottom: 1px solid $subClrGY;
+    
+  }
+
+  .orderItemList{
+    // padding:0;
+    @media (max-width:576px){
+      padding:0;
+    }
+    
+    .orderItem{
+      align-items: center;
+      padding: 0.5rem 0;
+      line-height: 2rem;
+      border-bottom: 1px solid $subClrGY;
+      @media (max-width:440px) {
+        padding: 0;
+      }
+      
+  
+      .counter {
+        display: flex;
+        // min-width: 80px;
+        align-items: center;
+      
+        .counterButton {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          width: 2rem;
+          height: 2rem;
+          border:1px solid $subClrGY;
+          border-radius: 4px;
+          background-color: #fff;
+          @media screen and (max-width:768px){
+            width: 1rem;
+            height: 1rem;
+          }
+          
+        }
+      
+        .counterContent {
+          flex: 1;
+          // width: 100%;
+          outline: 1px solid transparent;
+          line-height: 2rem;
+          .counterInput {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            border:none;
+            border-radius: 3px;
+            
+            &:focus{
+              // outline: none;
+              outline: 1px solid $subClrGY;
+            }
+            
+          }
+
+          @media screen and (max-width:768px) {
+              line-height: 1rem;
+          }
+        }
+      }
+
+    }
+  }
+
+  .orderListInfo{
+    padding: .5rem 0;
+    line-height: 2rem;
+    position: relative;
+    @media (max-width:576px){
+      display: flex;
+      justify-content: space-around;
+      line-height: 1rem;
+    }
+
+    .subTotal{
+      position: absolute;
+      right:1rem;
+      @media (max-width:576px){
+        position: relative;
+        right:0;
+      } 
+    }
+    
+  }   
+}
+
+
+
+
+
+
+
+
+
+
+

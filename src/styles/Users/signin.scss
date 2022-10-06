@@ -1,0 +1,216 @@
+@import '../variable';
+@import './Users.scss';
+@import './mixin';
+
+//水平垂直置中(flex)
+@mixin center{
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
+.signinPage{
+  width: 100%;
+  height: 100vh;
+  background:url('../../../public/img/login/loginBackground.jpg');
+  background-size: cover;  
+  background-position: left 75%;
+  position: relative;
+  @include center();
+  @media (max-width: 768px) {
+    background: $subClrBrown;   
+  }
+}
+
+.frame{ 
+  width: 800px;  
+  max-height:600px;
+  background: rgba(0, 0, 0, 0.51);
+  padding: 20px;
+  position: relative;
+  @media (max-width: 768px) {
+    width: 100%;    
+  }
+  
+  
+  .title{
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+    align-items: center;
+    @media (max-width: 768px) {
+      flex-direction: column;   
+    }
+    a,p{
+      color: #fff;
+      font-size: 1.7rem;
+    }
+    h1{
+      color: #fff;
+      font-size: 4rem;
+    }
+    .long-in_link{
+      margin: 0 10px;      
+      position: relative;
+      color: $subClrBrown;
+      &:hover {
+        transform: scale(1.05);  
+        color: #fff;      
+      }
+      &:active {
+        transform: scale(1);
+        font-weight: bold;       
+      }
+      &::after {
+        content:"";
+        position: absolute;
+        // width: 50%;
+        right:50%;
+        left:50%;
+        top: 40px;
+        border-bottom:4px solid #fff;
+        transition: .3s;
+      }
+      &:hover::after,
+      &.active::after {
+        right:35%;
+        left:35%;
+      }    
+ 
+    }
+    .active{
+      transform: scale(1);
+      font-weight: 750; 
+      color: #fff;     
+    }
+  } 
+  .logn-in{
+    display: flex;   
+  }
+}
+
+//--------------------login-----------------
+.login{  
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #fff;
+  padding: 0 26%; 
+  transition: all .3s;
+ 
+  @media (max-width: 768px) {
+    padding:0 15%;   
+  }
+  @media (max-width: 600px) {
+    padding:0 10%;   
+  }
+  .login-group{
+    width: 100%;
+    padding: 5px;
+    margin: 40px 0;
+    font-size: 24px;
+    display: flex;
+    align-items:flex-end;
+  }
+  .login-input{
+    border-bottom: 2px solid #fff;
+  }
+  .input{
+   border:0; 
+   background:transparent;
+   padding:0 20px ;
+   font-size: 16px;
+   width: 100%;
+      &:focus{
+    outline: none;
+    &::placeholder{
+      color: #fff;
+    }
+   }
+  }
+  .loginBtn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    button{
+      width: 40%;
+      background:#817161e3;
+      border-radius: 5px;
+      border: 0;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(1);
+        box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 2);
+      }
+    }
+    
+  }
+  .login-email{
+    position: relative;
+  }
+  .login-password{
+    position: relative; 
+  }
+  .remember{    
+    position: relative;
+    bottom:20px;
+    display: flex;
+    width: 100%;
+    margin-bottom: -20px;
+    input{
+      margin:0 10px 0 0;
+    }
+   
+  }
+  
+  .forget{
+    position: relative;
+    top:5px;    
+      @media (max-width: 768px) {
+        top:-20px;  
+  }
+    a{
+      color:#fff;
+    }
+  }   
+  .errtext{
+    position: absolute;
+    bottom: -40px;
+    left: 30px;
+    color: red;
+    font-size: 14px; 
+    display: flex;
+    .fa-circle-xmark{
+      margin:6px 5px 0 0;
+    }   
+  }  
+}
+.test{
+  display: flex;  
+  position: absolute;
+  font-size: 12px;
+  top: 0;
+  left: 5px;
+
+  button{
+    margin: 3px;
+    border:0;
+    background: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0.471);
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 3px 1px #ccc; 
+    }
+    &:active {
+      transform: scale(1);         
+    }
+  }
+}
+
